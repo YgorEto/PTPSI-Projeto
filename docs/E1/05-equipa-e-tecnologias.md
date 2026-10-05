@@ -10,6 +10,7 @@ Tecnologias:
 HTML,CSS,JavaScript,Figma,Bootstrap.
 PHP pro backend.
 MySQL pra data base.
+Utilizaremos também a IA como apoio ao projeto.
 
 Justificação: 
 
