@@ -85,7 +85,7 @@ Papel no projeto: utilizador administrador e principal fonte de requisitos. [nom
 Equipa de desenvolvimento
 
 Interesse: entregar um sistema funcional, publicado e bem documentado.
-Papel no projeto: [elemento 1] e [elemento 2], responsáveis por todo o projeto.
+Papel no projeto: [Lucas Santos] e [Ygor Eto], responsáveis por todo o projeto.
 -------------//-------------//-------------//-------------
 Docente da unidade curricular
 
