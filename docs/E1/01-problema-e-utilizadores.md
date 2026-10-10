@@ -1,32 +1,46 @@
 1-O problema
 
-Quem precisa de estacionar num parque privado não tem forma de saber, antes de chegar, se existe lugar livre. O condutor desloca-se ao local, e só aí descobre se o parque está cheio. Quando está, perde tempo à procura de alternativa, atrasa-se nos seus compromissos e contribui para mais circulação à volta do parque.
+Quem precisa de estacionar num parque privado ou no estacionamento de uma empresa não sabe, antes de chegar, se há vaga livre. Só descobre quando chega. Se está cheio, perde tempo à procura de outro sítio e chega atrasado. Se não está cheio, ainda dá voltas à procura de uma vaga livre.
 
-Do lado de quem gere o parque, a ocupação é difícil de acompanhar e não há registo organizado das entradas e saídas, nem forma de garantir lugar a quem já planeou a sua chegada.
+Quem gere o estacionamento tem dificuldade em saber quantas vagas estão ocupadas e não tem um registo organizado das entradas e saídas. Nas empresas, também é difícil controlar quem usa o estacionamento.
+
 -------------//-------------//-------------//-------
+
 2-Quem tem o problema
 
-Condutores / clientes
+Condutores/clientes
 
-.Situação: precisam de estacionar numa zona da cidade onde o parque se localiza.
-.Dificuldade: não sabem se há vaga antes de chegar e não podem garantir lugar.
+.Situação: precisam de estacionar num parque privado ou no estacionamento da empresa onde trabalham.
+.Dificuldade: não sabem se há vaga antes de chegar, nem onde estacionar.
 
-Gestor / dono do parque
+Gestor/dono do parque ou da empresa
 
-.Situação: precisa de controlar a lotação e os acessos.
-.Dificuldade: falta de informação em tempo real sobre a ocupação e de registo organizado de entradas e saídas.
+.Situação: precisa de controlar a lotação e quem entra.
+.Dificuldade: não sabe em tempo real quantas vagas estão ocupadas, não tem registo das entradas e saídas e é difícil controlar quem pode usar o estacionamento.
+
+-------------//-------------//-------------//-------
+
+3-Como é feito hoje
+
+O condutor vai ao estacionamento sem saber se há vaga. Só vê quando chega.
+A ocupação é controlada à mão ou não é controlada. [confirmar com a pessoa de contacto]
+A entrada é controlada por [cartão, comando, segurança ou é livre: confirmar com a pessoa de contacto].
+
+-------------//-------------//-------------//-------
+
+4-Pessoa real de contacto
+(Dados fictícios)
+
+Nome: Sem identificação
+Função: funcionário de um estacionamento
+
+
+O que disse: É difícil gerir algo com papel, saber quantas vagas ainda existem e onde cada carro estacionou, tenho que controlar quando entra e quando sai, como faço tudo no papel as vezes me engano e esqueço de anotar a saida de um carro. Alguns clientes esquecem onde deixam o carro, sou chamado para ajudar.
+
 
 
 -------------//-------------//-------------//-------
-3-Como e feito hoje
 
-Como é feito hoje
-O condutor dirige-se ao parque sem qualquer informação prévia sobre a disponibilidade.
-Não existe reserva: o lugar só é conhecido como livre ou ocupado à chegada.
-A ocupação é acompanhada de forma manual ou não é acompanhada de todo. [confirmar com a pessoa de contacto]
--------------//-------------//-------------//-------
-4-Pessoa real de contato
-
--------------//-------------//-------------//-------
 5-Como podemos ajudar
-A solução proposta é uma aplicação onde o cliente se regista, vê o parque no mapa e o número de vagas livres, reserva lugar e, à chegada, entra na cancela com um QR code. O gestor acompanha tudo através de um perfil de administrador. O detalhe da solução está em 02-proposta-de-valor
+
+Uma aplicação onde o condutor se regista, vê os estacionamentos e a lotação e, quando chega, entra na cancela com um QR code ou uma senha. A app diz onde estacionar e o condutor confirma onde ficou. O administrador do estacionamento gere as vagas e vê a ocupação e as entradas e saídas. 
