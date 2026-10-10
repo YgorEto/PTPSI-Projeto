@@ -1,98 +1,130 @@
+04-Requisitos e Stakeholders
+
 1.Requisitos funcionais
-Comuns a todos os utilizadores
-.RF01. O sistema deve permitir o registo de novos utilizadores.
 
-.RF02. O sistema deve permitir o login e o logout.
+Os requisitos estão separados por prioridade: Essenciais, Desejáveis e Opcionais.
 
-.RF03. O sistema deve mostrar a cada utilizador apenas a área correspondente ao seu perfil (cliente ou administrador).
--------------//-------------//-------------//-------------
+Essenciais
 
-Cliente
-.RF04. O cliente deve ver num mapa a localização do parque.
+Comuns
 
-.RF05. O cliente deve consultar o número de vagas livres do parque.
+- O sistema deve permitir o registo de novos utilizadores.
+- O sistema deve permitir login e logout.
+- Cada utilizador só vê a área do seu perfil (condutor, administrador do estacionamento ou administrador da app).
 
-.RF06. O cliente deve poder reservar uma vaga.
+Condutor
 
-.RF07. O cliente deve poder consultar as suas reservas e cancelar uma reserva ativa.
+- O condutor deve poder pôr o código da empresa no perfil.
+- O condutor deve ver os estacionamentos e escolher um.
+- O condutor deve ver a lotação do estacionamento.
+- O condutor deve poder carregar em "Entrar no estacionamento" e receber um QR code e uma senha. Se estiver cheio, a app avisa e não gera QR code nem senha.
+- A app deve mostrar ao condutor a vaga onde deve estacionar.
+- O condutor deve poder confirmar "Estacionei na vaga X" ou "Estacionei noutra vaga" (escolhendo qual). Este ecrã fica no perfil até ele sair.
+- O condutor deve poder sair com o mesmo QR code ou a mesma senha da entrada.
 
-.RF08. O cliente deve ver o preço da diária antes de confirmar a .reserva.
+Administrador do estacionamento
 
-.RF09. A aplicação deve mostrar ao cliente um QR code de acesso quando este chega ao local com uma reserva válida.
+- O administrador deve poder gerir as vagas: acrescentar vagas, tirar vagas livres e mudar a ordem.
+- O administrador deve ver a ocupação em tempo real.
 
-.RF10. O cliente deve poder consultar o seu histórico de reservas e estacionamentos.
--------------//-------------//-------------//-------------
-Administrador
-.RF11. O administrador deve poder definir a lotação do parque.
-
-.RF12. O administrador deve poder definir o preço da diária.
-
-.RF13. O administrador deve poder consultar todas as reservas.
-
-.RF14. O administrador deve ver a ocupação do parque em tempo real.
-
-.RF15. O administrador deve poder consultar o registo de entradas e saídas.
--------------//-------------//-------------//-------------
 Cancela simulada
-.RF16. A cancela deve validar o QR code apresentado e só abrir se a reserva for válida.
 
-.RF17. A cancela deve registar cada entrada e cada saída, com data e hora.
+- A cancela deve ver se o QR code ou a senha são válidos e só abrir se o estacionamento não estiver cheio.
+- A cancela deve registar cada entrada e cada saída, com data e hora.
+- A cancela deve dar ao carro a primeira vaga livre pela ordem definida e mostrar onde estacionar.
+- A lotação deve atualizar a cada entrada e a cada saída.
 
-.RF18. O número de vagas livres deve ser atualizado a cada entrada, saída, reserva e cancelamento.
 -------------//-------------//-------------//-------------
+
+Desejáveis
+
+Condutor
+
+- No estacionamento de empresa, a app deve ver se o código da empresa no perfil está certo. Se a empresa mudou o código, a app pede o novo antes de dar o QR code.
+- O condutor deve poder pedir outra vaga se a dada estiver ocupada ou sem acesso.
+- O condutor deve ver a localização do estacionamento.
+
+Administrador do estacionamento
+
+- O administrador deve poder ver o registo de entradas e saídas.
+- O administrador deve poder mudar o código da empresa.
+- O administrador deve poder mudar à mão o estado de uma vaga (livre ou ocupada).
+
+Administrador da app
+
+- O administrador da app deve poder preparar um estacionamento quando a empresa contrata: criar o estacionamento, marcar as vagas e a ordem, criar a conta do administrador do estacionamento e o código da empresa. Na primeira versão pode ser feito direto na base de dados.
+
+-------------//-------------//-------------//-------------
+
+Opcionais
+
+- Em estacionamentos grandes, o condutor deve poder ver um mapa com o caminho da cancela até à vaga.
+- O condutor deve poder ver o histórico das suas entradas.
+
+-------------//-------------//-------------//-------------
+
 2- Regras de negócio
-RN01. Vagas livres = lotação − veículos dentro do parque − reservas ativas.
 
-.RN02. Não é possível reservar quando não há vagas livres.
+- A lotação é o número de vagas do estacionamento. Cada vaga está livre ou ocupada.
+- Se não há vagas livres, ninguém entra: a app avisa que está cheio, não gera QR code nem senha e a cancela não abre.
+- Dois carros não podem receber a mesma vaga.
+- O QR code e a senha valem 15 minutos para entrar. Depois de entrar, valem até o condutor sair. Servem só para uma entrada e uma saída.
+- No parque privado entra qualquer condutor registado. No estacionamento de empresa só entra quem tem o código da empresa certo no perfil.
+- Cada empresa tem um só código. Só o administrador do estacionamento o muda. Quem já está dentro não é afetado e sai com o QR code ou a senha que recebeu.
+- As vagas são dadas por ordem, definida pela empresa. Se uma vaga fica livre pelo meio, o próximo carro que entrar recebe essa vaga.
+- Uma vaga volta a ficar livre quando o carro a que o sistema a deu sai. Se foi marcada como ocupada porque o condutor pediu outra vaga, só fica livre quando o administrador do estacionamento a liberta.
+- Se o condutor escolhe "Estacionei noutra vaga", a vaga escolhida fica ocupada por ele e a vaga que lhe foi dada fica livre. Se a vaga escolhida já está ocupada, a app avisa e pede para escolher outra.
+- Só o administrador do estacionamento muda as vagas e a ordem, e só pode tirar vagas que estejam livres.
+- Só o administrador da app prepara os estacionamentos e cria as contas dos administradores.
 
-.RN03. Duas pessoas não podem reservar a última vaga em simultâneo; .apenas uma reserva é aceite.
-
-.RN04. Uma reserva que não é usada dentro do prazo definido expira e liberta a vaga.
-
-.RN05. Cada QR code só é válido para a reserva a que pertence e para uma entrada.
-
-.RN06. Apenas o administrador pode alterar a lotação e o preço da diária.
 -------------//-------------//-------------//-------------
+
 3- Requisitos não funcionais
-.RNF01. Acesso online: o sistema deve estar publicado num endereço .público.
 
-.RNF02. Responsividade: a interface deve funcionar em telemóvel e em computador.
+- Online: o sistema deve estar publicado num endereço público.
+- Responsivo: deve funcionar no telemóvel e no computador.
+- Segurança: as palavras-passe devem ficar guardadas cifradas e cada perfil só acede à sua área.
+- Proteção de dados: guardar só os dados pessoais necessários, de acordo com o RGPD.
+- Fácil de usar: entrar, receber a vaga e sair deve ser simples e rápido.
+- Acessibilidade: contraste adequado e textos fáceis de ler.
+- Fiabilidade: a lotação e o estado das vagas devem ficar certos mesmo com várias pessoas a usar ao mesmo tempo.
+- Manutenção: o código e o script da base de dados devem estar no repositório da equipa.
 
-.RNF03. Segurança: as palavras-passe devem ser guardadas de forma cifrada e o acesso às áreas deve ser controlado por perfil.
-
-.RNF04. Proteção de dados: devem ser guardados apenas os dados pessoais necessários ao serviço, em linha com o RGPD.
-
-.RNF05. Usabilidade: o fluxo de consultar vagas, reservar e obter o QR code deve ser simples e curto.
-
-.RNF06. Acessibilidade: a interface deve ter contraste adequado e textos legíveis.
-
-.RNF07. Fiabilidade: a contagem de vagas deve manter-se coerente mesmo com vários utilizadores a usar o sistema ao mesmo tempo.
-
-.RNF08. Manutenção: o código e o script da base de dados devem estar versionados no repositório da equipa.
 -------------//-------------//-------------//-------------
+
 4- Stakeholders
 
-Clientes (condutores)
+Condutores (normais e de empresa)
 
-Interesse: saber se há vaga, reservar e entrar com facilidade.
+- Interesse: saber se há vaga, entrar com facilidade e saber onde estacionar.
 Papel no projeto: utilizadores principais da aplicação.
--------------//-------------//-------------//-------------
-Dono ou gestor do parque
 
-Interesse: controlar a lotação, o preço da diária e os acessos, com informação fiável.
-Papel no projeto: utilizador administrador e principal fonte de requisitos. [nome e função da pessoa de contacto, a preencher]
--------------//-------------//-------------//-------------
-Equipa de desenvolvimento
 
-Interesse: entregar um sistema funcional, publicado e bem documentado.
-Papel no projeto: [Lucas Santos] e [Ygor Eto], responsáveis por todo o projeto.
--------------//-------------//-------------//-------------
-Docente da unidade curricular
+Dono ou gestor do parque, ou empresa dona do estacionamento
 
-Interesse: avaliar a evolução do projeto e a aprendizagem da equipa.
-Papel no projeto: avalia as seis entregas e o teste escrito.
--------------//-------------//-------------//-------------
-Entidades de alojamento e serviços externos (mapa, alojamento)
+- Interesse: controlar as vagas, a lotação e quem entra, com informação certa.
+Papel no projeto: contrata o serviço, usa o perfil de administrador do estacionamento e é a principal fonte de requisitos. [nome e função da pessoa de contacto, a preencher]
 
-Interesse: uso dos seus serviços dentro dos limites gratuitos ou contratados.
-Papel no projeto: fornecem a infraestrutura onde o sistema fica publicado.
+
+Administrador da app
+
+- Interesse: preparar cada estacionamento de forma simples quando a empresa contrata.
+Papel no projeto: prepara as vagas, a ordem e as contas dos administradores.
+
+
+
+Entidades de alojamento e serviços externos (alojamento, mapa)
+
+- Interesse: uso dos seus serviços dentro dos limites gratuitos ou contratados.
+Papel no projeto: dão o espaço onde o sistema fica publicado.
+
+
+-------------//-------------//-------------//-------------
+
+5- Riscos
+
+- A cancela é simulada na app, não é equipamento real.
+- A vaga dada pode não ser onde o condutor estaciona, porque o sistema só sabe a vaga que deu. Para ajudar, o condutor pode confirmar onde estacionou ou pedir outra vaga, e o administrador pode corrigir uma vaga à mão. A lotação total não depende disto, porque conta só entradas e saídas.
+- O condutor pode não carregar em nenhuma das opções de confirmação. Aceitamos este risco na primeira versão.
+- O QR code vale 15 minutos antes de ser usado, por isso pode haver mais QR codes do que vagas livres. Quando o estacionamento está cheio, a app não gera mais QR codes e a cancela não abre, mesmo para quem já tinha um QR code válido.
+- A empresa pode demorar a dar o código novo aos funcionários, que ficam sem acesso ao estacionamento da empresa até o terem.
