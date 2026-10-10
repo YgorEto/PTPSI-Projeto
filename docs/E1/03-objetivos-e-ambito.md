@@ -1,78 +1,106 @@
+03-Objetivos e ambito
+
 1-Objetivo geral
 
-Desenvolver e publicar online uma aplicação de estacionamento privado que permita ao cliente consultar as vagas livres, reservar lugar e entrar no parque com um QR code, e que dê ao administrador o controlo da lotação, do preço da diária e dos registos de acesso.
+Criar e publicar online uma aplicação de estacionamento, para parques privados e para empresas, onde o condutor vê a lotação, entra com um QR code ou uma senha e sabe onde estacionar, e o administrador do estacionamento controla as vagas, a ocupação e as entradas e saídas.
+
 -------------//-------------//-------------//-------------
 
 2- Objetivos específicos
-.Permitir que o cliente se registe, faça login e veja a localização do parque num mapa.
 
-.Mostrar o número de vagas livres em tempo real.
+- Permitir que o condutor se registe, faça login e veja os estacionamentos e a localização deles.
 
-.Permitir ao cliente fazer e consultar reservas de vaga.
+- Permitir que o condutor preencha no perfil o código da empresa, para usar o estacionamento dela.
 
-.Gerar um QR code de acesso que o cliente apresenta à cancela.
+- Mostrar a lotação do estacionamento em tempo real.
 
-.Simular a cancela: validar o QR code, registar a entrada e a saída e 
-atualizar as vagas livres.
+- Gerar um QR code e uma senha de entrada, que valem 15 minutos para entrar e, depois de entrar, até sair.
 
-.Dar ao administrador as ferramentas para definir a lotação, definir o preço da diária, consultar reservas, ver a ocupação em tempo real e consultar os registos de entrada e saída.
+- Simular a cancela: ver se o QR code ou a senha são válidos, registar a entrada e a saída e atualizar a lotação.
 
-.Distinguir dois perfis (cliente e administrador) com permissões diferentes.
+- Dar a cada carro a primeira vaga livre, pela ordem que a empresa definiu, e mostrar onde estacionar.
 
-.Publicar o sistema num endereço público até 5 de janeiro de 2027.
+- Permitir que o condutor confirme "Estacionei na vaga X" ou "Estacionei noutra vaga", e que peça outra vaga se a dada estiver ocupada.
+
+- Dar ao administrador do estacionamento o controlo das vagas e da ordem delas, da ocupação, das entradas e saídas e do código da empresa.
+
+- Dar ao administrador da app a preparação de cada estacionamento quando a empresa contrata.
+
+- Ter três perfis: condutor, administrador do estacionamento e administrador da app.
+
+- Publicar o sistema num endereço público até 5 de janeiro de 2027.
+
 -------------//-------------//-------------//-------------
 
 3- Âmbito incluído
-.Aplicação com registo e login de utilizadores.
 
-.Dois perfis: cliente e administrador.
+- Registo e login.
 
-.Mapa com a localização do parque.
+- Três perfis: condutor, administrador do estacionamento e administrador da app.
 
-.Consulta de vagas livres, calculadas a partir da lotação, dos veículos dentro do parque e das reservas ativas.
+- Dois tipos de estacionamento: parque privado (qualquer condutor registado) e estacionamento de empresa (só quem tem o código da empresa).
 
-.Reserva de vaga num parque.
+- Ver a lotação e a localização do estacionamento.
 
-.QR code de acesso apresentado pela aplicação.
+- QR code e senha de entrada.
 
-.Cancela simulada, que controla as vagas livres pela contagem de entradas e saídas.
+- Cancela simulada, que conta as entradas e saídas.
 
-.Registo de entradas e saídas na base de dados.
+- Vagas dadas por ordem, definida pela empresa.
 
-.Área do administrador com gestão de lotação e preço da diária, consulta de reservas, ocupação em tempo real e registos de entrada e saída.
+- Confirmação do condutor ("Estacionei na vaga X" ou "Estacionei noutra vaga") e pedido de outra vaga.
 
-.Sistema alojado e acessível num endereço público.
+- Registo das entradas e saídas.
+
+- Área do administrador do estacionamento: vagas, ocupação, entradas e saídas, código da empresa e corrigir o estado de uma vaga.
+
+- Preparação do estacionamento pelo administrador da app (na primeira versão pode ser feita direto na base de dados).
+
+- Sistema publicado num endereço público.
 
 -------------//-------------//-------------//-------------
+
 4- Âmbito excluído
-.Cancela e câmara reais: a cancela e a leitura do QR code são simuladas, sem qualquer hardware físico.
 
-.Pagamentos reais: o preço da diária é definido e apresentado ao cliente, mas não há cobrança.
+- Cancela e câmara reais: a cancela e a leitura do QR code são simuladas.
 
-.Vários parques: o sistema trata um único parque, embora a estrutura de dados possa ficar preparada para crescer.
+- Sensores nas vagas: o sistema não sabe sozinho se uma vaga está ocupada.
 
-.Perfil de operador ou funcionário: ficam apenas cliente e administrador.
+- Reservas de vaga.
 
-.Leitura automática de matrículas.
+- Pagamentos e preços.
 
-.Aplicação móvel nativa: a aplicação é acedida pelo navegador, com interface responsiva.
+- Leitura de matrículas.
+
+- Perfil de operador, segurança ou funcionário do estacionamento.
+
+- Aplicação móvel nativa: a aplicação funciona no navegador.
+
+- Mapa do interior do parque: só se sobrar tempo.
 
 -------------//-------------//-------------//-------------
+
 5- Pressupostos e restrições
 
-.A equipa tem no máximo dois elementos e mantém-se até ao fim.
-.O projeto decorre em cerca de 15 semanas, com seis entregas intermédias.
-.Os dois elementos são trabalhadores-estudantes e têm disponibilidade limitada, por isso o âmbito foi mantido reduzido.
-.Um sistema pequeno a funcionar vale mais do que um grande a meio, por isso as funcionalidades excluídas só entram se sobrar tempo.
+- A cancela é simulada na app. Na primeira versão não há equipamento real.
+- O sistema só sabe o que as entradas, as saídas e as confirmações dos condutores lhe dizem, porque não há sensores nas vagas.
+- Cada vaga tem um número, e a ordem em que são dadas é definida pela empresa.
+- Cada carro ocupa uma vaga.
+- O condutor tem telemóvel com internet.
+- Para a demonstração, usamos poucos estacionamentos de teste (um parque privado e uma empresa).
+- A primeira versão é pequena para caber em 15 semanas: o que é desejável e opcional só entra se sobrar tempo.
 
 -------------//-------------//-------------//-------------
 
 6- Critérios de sucesso
-.Um cliente consegue, do registo à entrada, completar o fluxo de reserva e acesso sem ajuda.
-.O número de vagas livres atualiza-se corretamente após cada reserva, entrada e saída.
-.Duas pessoas não conseguem reservar a última vaga ao mesmo tempo.
-.O administrador consegue consultar reservas, ocupação e registos de acesso.
-.O sistema está publicado e acessível num endereço público.
-.Cada elemento da equipa sabe explicar todo o projeto no teste escrito de 7 de janeiro.
 
--------------//-------------//-------------//-------------
+- Um condutor consegue fazer tudo sem ajuda: registar-se, ver a lotação, entrar, estacionar, confirmar e sair.
+- A lotação atualiza-se certa a cada entrada e saída.
+- Cada carro recebe a primeira vaga livre pela ordem definida, e dois carros nunca recebem a mesma vaga.
+- Quem não tem o código da empresa não entra no estacionamento da empresa.
+- Quando o código da empresa muda, quem já está dentro consegue sair, e quem quer entrar tem de pôr o código novo.
+- Quando o estacionamento está cheio, a app avisa, não gera QR code nem senha e a cancela não abre.
+- O administrador do estacionamento consegue gerir as vagas, ver a ocupação e ver as entradas e saídas.
+- O sistema está publicado num endereço público.
+
+
