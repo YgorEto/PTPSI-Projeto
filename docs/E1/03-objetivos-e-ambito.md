@@ -28,7 +28,6 @@ Criar e publicar online uma aplicação de estacionamento, para parques privados
 
 - Ter três perfis: condutor, administrador do estacionamento e administrador da app.
 
-- Publicar o sistema num endereço público até 5 de janeiro de 2027.
 
 -------------//-------------//-------------//-------------
 
@@ -88,7 +87,6 @@ Criar e publicar online uma aplicação de estacionamento, para parques privados
 - Cada carro ocupa uma vaga.
 - O condutor tem telemóvel com internet.
 - Para a demonstração, usamos poucos estacionamentos de teste (um parque privado e uma empresa).
-- A primeira versão é pequena para caber em 15 semanas: o que é desejável e opcional só entra se sobrar tempo.
 
 -------------//-------------//-------------//-------------
 
@@ -101,6 +99,6 @@ Criar e publicar online uma aplicação de estacionamento, para parques privados
 - Quando o código da empresa muda, quem já está dentro consegue sair, e quem quer entrar tem de pôr o código novo.
 - Quando o estacionamento está cheio, a app avisa, não gera QR code nem senha e a cancela não abre.
 - O administrador do estacionamento consegue gerir as vagas, ver a ocupação e ver as entradas e saídas.
-- O sistema está publicado num endereço público.
+
 
 
