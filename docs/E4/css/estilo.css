@@ -1,0 +1,49 @@
+/* Cores e letra do Figma do rapidSpot */
+:root {
+    --azul: #102C5B;
+    --azul-escuro: #0B2245;
+    --amarelo: #F7B500;
+    --fundo: #EEF1F9;
+    --fundo-claro: #F6F8FC;
+    --texto: #0B2245;
+    --texto-cinza: #647184;
+    --branco: #FFFFFF;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--fundo);
+    color: var(--texto);
+}
+
+/* Ecrãs do condutor: telemóvel (390px) */
+.ecra-condutor {
+    max-width: 390px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: var(--branco);
+}
+
+/* Ecrãs do administrador: PC (1440px) */
+.ecra-admin {
+    max-width: 1440px;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+/* Botão principal (amarelo) */
+.btn-rapidspot {
+    background-color: var(--amarelo);
+    color: var(--azul-escuro);
+    font-weight: 700;
+    border: none;
+}
+
+.btn-rapidspot:hover {
+    background-color: #E0A400;
+    color: var(--azul-escuro);
+}
+
+.texto-cinza {
+    color: var(--texto-cinza);
+}
